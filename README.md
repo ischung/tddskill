@@ -12,15 +12,50 @@ tddskill/
 
 ## 설치 방법
 
-`tdd.md` 파일을 Claude Code 커스텀 커맨드 디렉토리에 복사합니다:
+> **사전 요구사항:** [Claude Code](https://claude.ai/code)가 설치되어 있어야 합니다.
+
+### 방법 1: curl로 바로 설치 (권장)
+
+**전역 설치** — 모든 프로젝트에서 `/tdd` 사용 가능:
 
 ```bash
-# 프로젝트 전용 (현재 프로젝트에서만 사용)
-cp tdd.md .claude/commands/tdd.md
-
-# 전역 설치 (모든 프로젝트에서 사용)
-cp tdd.md ~/.claude/commands/tdd.md
+mkdir -p ~/.claude/commands
+curl -o ~/.claude/commands/tdd.md \
+  https://raw.githubusercontent.com/ischung/tddskill/main/tdd.md
 ```
+
+**프로젝트 전용 설치** — 현재 프로젝트에서만 사용:
+
+```bash
+mkdir -p .claude/commands
+curl -o .claude/commands/tdd.md \
+  https://raw.githubusercontent.com/ischung/tddskill/main/tdd.md
+```
+
+### 방법 2: 저장소 클론 후 복사
+
+```bash
+git clone https://github.com/ischung/tddskill.git
+cd tddskill
+
+# 전역 설치
+mkdir -p ~/.claude/commands
+cp tdd.md ~/.claude/commands/tdd.md
+
+# 또는 프로젝트 전용 설치
+mkdir -p .claude/commands
+cp tdd.md .claude/commands/tdd.md
+```
+
+### 설치 확인
+
+Claude Code를 열고 다음 명령어를 입력합니다:
+
+```
+/tdd
+```
+
+자동완성 목록에 `tdd`가 나타나면 설치 완료입니다.
 
 ## 사용 방법
 
